@@ -1,7 +1,6 @@
 'use strict';
 
 const addItemToList = function(event) {
-  event.preventDefault();
   const searchText = $('.js-shopping-list-entry');
   $('.shopping-list').append(`
             <li>
@@ -24,10 +23,14 @@ const deleteButton = $('.shopping-item-delete');
 
 
 $(
-  function () {
+ 
+  $('form').on('submit', function(event) {
+    console.log("hello to");
+    event.preventDefault();
     const buttonTry = $('.js-shopping-list-entry').siblings(':submit');
     buttonTry.click(addItemToList);
-  }
+  })
+
 //   function(){
 //       $('ul').on('click', '.shopping-list-item-delete' , function(event){
 //     $('li').remove();
