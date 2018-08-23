@@ -18,27 +18,32 @@ const addItemToList = function(event) {
     
 };
 
-const deleteButton = $('.shopping-item-delete');
+
 
 
 
 $(
  
   $('form').on('submit', function(event) {
-    console.log("hello to");
     event.preventDefault();
     const buttonTry = $('.js-shopping-list-entry').siblings(':submit');
     buttonTry.click(addItemToList);
   })
 
-//   function(){
-//       $('ul').on('click', '.shopping-list-item-delete' , function(event){
-//     $('li').remove();
-//       });
-
-      
-//   }
 );
+
+$(
+  function(){
+    const deleteButton = $('.shopping-item-delete');
+    $('.shopping-list').on('click', '.shopping-item-delete',
+      function(event){
+        this.closest('li').remove();});
+  }
+
+);
+
+          
+
 
 
 
