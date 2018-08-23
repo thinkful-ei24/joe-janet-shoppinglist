@@ -1,7 +1,9 @@
-const addItemToList = function() {
-    function(event) {
-        event.preventDefault();
-        $('.shopping-list').append(`
+'use strict';
+
+const addItemToList = function(event) {
+  event.preventDefault();
+  const searchText = $('.js-shopping-list-entry');
+  $('.shopping-list').append(`
             <li>
                 <span class="shopping-item">${searchText.val()}</span>
                 <div class="shopping-items-controls">
@@ -12,16 +14,30 @@ const addItemToList = function() {
                         <span class="button-label">Delete</span>
                     </button>
                 </div>
-            </li>`)
-        searchText.val('');
-    }
-}
+            </li>`);
+  searchText.val('');
+    
+};
+
+const deleteButton = $('.shopping-item-delete');
 
 
-$(addItemListener = function () {
-    let buttonTry = $(':submit');
-    let searchText = $('.js-shopping-list-entry');
-    $(':submit').click(addItemToList());
-    }
-)
+
+$(
+  function () {
+    const buttonTry = $(':submit');
+    buttonTry.click(addItemToList);
+  }
+//   function(){
+//       $('ul').on('click', '.shopping-list-item-delete' , function(event){
+//     $('li').remove();
+//       });
+
+      
+//   }
+);
+
+
+
+
 
