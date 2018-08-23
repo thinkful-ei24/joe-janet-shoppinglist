@@ -25,7 +25,7 @@ const deleteButton = $('.shopping-item-delete');
 
 $(
   function () {
-    const buttonTry = $(':submit');
+    const buttonTry = $('.js-shopping-list-entry').siblings(':submit');
     buttonTry.click(addItemToList);
   }
 //   function(){
