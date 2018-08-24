@@ -1,5 +1,3 @@
-'use strict';
-
 const addItem = function(entry) {
     const htmlText = 
         `<li>
@@ -25,19 +23,26 @@ $($('form').on('submit', function(event) {
     }
 ));
 
-$(
-  function(){
-    const deleteButton = $('.shopping-item-delete');
+$(function(){
     $('.shopping-list').on('click', '.shopping-item-delete',
-      function(event){
-        this.closest('li').remove();});
+    function(event){
+        this.closest('li').remove();
+        }
+    );
   }
-
 );
 
+$(function() {
+    $('.shopping-list').on('click', '.shopping-item-toggle', 
+    function(event) {
+		$(this).closest('li').find('.shopping-item').toggleClass('shopping-item__checked');
+		//Why wrap ^ this in $(), it should work without no?
+            }
+        );
+    }
+)
+
           
-
-
 
 
 
